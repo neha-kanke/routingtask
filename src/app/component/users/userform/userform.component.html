@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        
+        <div class="col-md-10">
+            <h2>{{iseditmode ? "update user":"Add new user"}}</h2>
+            <form [formGroup]="userform" (ngSubmit)="onadduser()">
+                <div class="form-group">
+                    <label for="userName">user name</label>
+                    <input type="text" class="form-control" id="userName" formControlName="userName">
+                </div>
+                <div class="form-group">
+                    <label for="userRole">user role</label>
+                    <select name="userRole" id="userRole" class="form-control" formControlName="userRole">
+                        <option value="">select role</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Users">Users</option>
+                    </select>
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-warning" *ngIf="!iseditmode" type="submit">Add user</button>
+                    <button class="btn btn-success" *ngIf="iseditmode" type="button" (click)="onupdate()">Update
+                        user</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-md-6">
+            <button class="btn btn-warning mb-4"type="button"     [routerLink]="['add-form']">Add new user</button>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let user of userarr" 
+                [routerLink]="['/users',user.userId]">
+                    {{user.userName}}
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
